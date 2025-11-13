@@ -11,15 +11,7 @@ public class MortgageCalculator {
         double monthlySalary = getValidDouble("Enter your monthly salary:");
         double creditScore = getValidCreditScore("Enter your credit score(0-500):");
         boolean criminalRecord = getValidBoolean("Do you have a criminal record? (true/false):");
-        //boolean criminalRecord = scanner.nextBoolean();
-        //System.out.println("Enter your monthly salary:");
-
-         //double creditScore = scanner.nextDouble();
-        // System.out.println("Enter your credit score(0-500):");
-
-       // boolean criminalRecord = scanner.nextBoolean();
-         //System.out.println("Do you have a criminal record? (true/false):");
-
+     
          boolean eligible = (creditScore>=300) && !criminalRecord;
 
          if (!eligible){
@@ -28,9 +20,6 @@ public class MortgageCalculator {
             input.close();
        return;
          }
-
-       // double principal = scanner.nextDouble();
-       // System.out.print("Enter your desired loan amount:");
 
        double principal = getValidDouble("Enter your desired loan amount:");
 
@@ -42,12 +31,6 @@ public class MortgageCalculator {
 
         double annualInterestRate = getValidDouble("Enter annual interest rate (in %):");
         int years = (int) getValidDouble("Enter loan period in years:")
-        //System.out.print("Enter annual interest rate:");
-
-       // int years = scanner.nextInt();  
-       // System.out.print("Enter loan period(in years):");
-
-       // scanner.close();
 
         double monthlyInterestRate = (annualInterestRate / 100) / 12;
         int totalPayments = years * 12;
@@ -113,4 +96,4 @@ public class MortgageCalculator {
             }
         }
     }
-}
+};
