@@ -11,7 +11,11 @@ public class MortgageCalculator {
         double monthlySalary = getValidDouble("Enter your monthly salary:");
         double creditScore = getValidCreditScore("Enter your credit score(0-500):");
         boolean criminalRecord = getValidBoolean("Do you have a criminal record? (true/false):");
+<<<<<<< HEAD
 
+=======
+     
+>>>>>>> bddb74aef50a4470dc616071af3b32263e83e9ad
          boolean eligible = (creditScore>=300) && !criminalRecord;
 
          if (!eligible){
@@ -21,14 +25,18 @@ public class MortgageCalculator {
        return;
          }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> bddb74aef50a4470dc616071af3b32263e83e9ad
        double principal = getValidDouble("Enter your desired loan amount:");
 
-        if( principal >= 2 * monthlySalary ){
+        if( principal > 2 * monthlySalary ){
                     System.out.println("Loan request denied!");
                     System.out.println("Reason:Loan request must be 2 times of your salary.");
                     input.close();
         return;
+        }
 
         double annualInterestRate = getValidDouble("Enter annual interest rate (in %):");
         int years = (int) getValidDouble("Enter loan period in years:")
@@ -37,7 +45,7 @@ public class MortgageCalculator {
         int totalPayments = years * 12;
 
         double monthlyMortgagePayment = principal *
-    (monthlyInterestRate * Math.pow(1 + monthlyInterestRate, totalPayments)) /
+    (monthlyInterestRate * Math.pow(1 + monthlyInterestRate,a totlPayments)) /
     (Math.pow(1 + monthlyInterestRate, totalPayments) - 1);
 
         double totalPayment = monthlyMortgagePayment * totalPayments;
@@ -48,6 +56,7 @@ public class MortgageCalculator {
     String formattedMortage = currencyFormat.format(monthlyMortgagePayment);
 
     System.out.println("Monthly Mortgage Payment:" + formattedMortage);
+        input close();
 
     System.out.println("\n=== Mortgage Summary === ");
     System.out.println("Loan Amount:"+currencyFormat.format(principal));
@@ -56,9 +65,7 @@ public class MortgageCalculator {
     System.out.println("Total Interest:"+currencyFormat.format(totalInterest));
 
     private static double getValidDouble(scanner input, string message);
-
-    while(true)
-
+        while(true)
     {
         System.out.print(message);
         if (input.hasNextDouble()) {
